@@ -1,0 +1,19 @@
+{
+  "name": "agent-tool-sandbox",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npm run build -- --watch --servedir=dist --log-level=info",
+    "build": "rm -rf dist && mkdir -p dist && esbuild src/main.jsx --bundle --outfile=dist/bundle.js --loader:.jsx=jsx --format=esm --sourcemap --define:process.env.NODE_ENV=\\\"production\\\" && cp index.html dist/index.html",
+    "test": "npm run build"
+  },
+  "dependencies": {
+    "lucide-react": "^0.372.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  }
+}
